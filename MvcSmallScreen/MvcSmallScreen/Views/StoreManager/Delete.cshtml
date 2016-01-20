@@ -1,0 +1,53 @@
+﻿@model MvcSmallScreen.Models.Goods
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Вы уверены что хотите удалить?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            Наименование:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+           Цена
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Ссылка на изображение:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodArtUrl)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> 
+            
+        </div>
+        <div>
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

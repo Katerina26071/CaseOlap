@@ -1,0 +1,28 @@
+﻿@model MvcSmallScreen.Models.Goods
+
+@{ 
+    ViewBag.Title = "Товар - " + Model.Title; 
+} 
+
+<h2>@Model.Title</h2>
+<p>
+    <img alt="@Model.Title" src="@Model.GoodArtUrl" />
+</p>
+<div id="album-details">
+    <p>
+        <em>Вид товара:</em> @Model.products.Name
+    </p>
+    <p>
+        <em>Производитель:</em> @Model.Laptop.Name
+    </p>
+    <p>
+        <em>Модель:</em> @Model.Title
+    </p>
+    <p>
+        <em>Цена:</em> @String.Format("{0:F}", Model.Price)
+    </p>
+    <p class="button"> 
+        @Html.ActionLink("Добавить в корзину", "AddToCart", "ShoppingCart", new { id = Model.GoodsId }, "") 
+    </p>
+</div>
+

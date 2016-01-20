@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MvcSmallScreen.Models.Product> 
+@{ 
+    ViewBag.Title = "Store"; 
+} 
+<h3>Обзор товаров</h3>
+
+<p> 
+    Всего @Model.Count() вида товаров:</p>
+<ul> 
+    @foreach (var products in Model) 
+    { 
+        <li>@Html.ActionLink(products.Name, "Browse", new { products = products.Name })</li> 
+    } 
+</ul>
+

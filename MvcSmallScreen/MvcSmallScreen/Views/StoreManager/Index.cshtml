@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MvcSmallScreen.Models.Goods> 
+       @{ ViewBag.Title = "Index"; }
+<p> @Html.ActionLink("Добавить новый", "Create") </p>
+<table>
+    <tr>
+        <th> Производитель </th>
+        <th> Вид Товара </th>
+        <th> Наименование </th>
+        <th> Цена </th>
+        <th></th>
+    </tr> @foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Laptop.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.products.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price) руб.
+        </td>
+        <td align ="right">
+            @Html.ActionLink("Изменить", "Edit", new { id = item.GoodsId }) |
+            @Html.ActionLink("Детали", "Details", new { id = item.GoodsId }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.GoodsId })
+        </td>
+    </tr> }
+</table>

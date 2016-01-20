@@ -1,0 +1,40 @@
+﻿@model MvcSmallScreen.Models.Goods
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Наименование:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            Цена
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Ссылка на изображение:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodArtUrl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.GoodsId }) <br>
+    @Html.ActionLink("Назад", "Index")
+</p>

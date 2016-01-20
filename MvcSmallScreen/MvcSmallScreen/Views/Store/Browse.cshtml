@@ -1,0 +1,17 @@
+﻿@model MvcSmallScreen.Models.Product 
+       
+@{ ViewBag.Title = "Обзор товаров"; } 
+<div class="genre">
+<h3><em>@Model.Name</em> </h3>
+
+<ul id="album-list">
+    @foreach (var goods in Model.Goods) {
+        <li>
+            <a href="@Url.Action("Details", new { id = goods.GoodsId })">
+                <img alt="@goods.Title"
+                     src="@goods.GoodArtUrl" />
+                <span>@goods.Title</span>
+            </a>
+        </li> }
+</ul>
+</div>
